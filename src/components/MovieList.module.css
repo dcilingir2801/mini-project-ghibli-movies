@@ -1,0 +1,26 @@
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.movie-list li {
+  border: 1px black solid;
+  border-radius: 5px;
+  display: flex;
+  width: 600px;
+  padding: 30px;
+  margin: 20px;
+}
+
+.movie-list img {
+  height: 500px;
+  width: auto;
+}
+
+a,
+.movie-list p {
+  text-decoration: none;
+}
