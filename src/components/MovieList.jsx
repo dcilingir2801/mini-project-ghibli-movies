@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import styles from "./MovieList.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -39,7 +40,11 @@ function MovieList() {
         randomIndexes.push(randomIndex);
       }
     }
-    setRandomMovies([movies[randomIndexes[0]], movies[randomIndexes[1]], movies[randomIndexes[2]]]);
+    setRandomMovies([
+      movies[randomIndexes[0]],
+      movies[randomIndexes[1]],
+      movies[randomIndexes[2]],
+    ]);
   };
 
   const filteredMovies = movies.filter((movie) =>
@@ -47,15 +52,17 @@ function MovieList() {
   );
 
   return (
-    <div className="movie-list">
+    <div className={styles["movie-list"]}>
       <input
         type="text"
         placeholder="Search movies"
         value={searchTerm}
         onChange={handleSearch}
       />
-        <button onClick={() => setShowRandomMovies(true)}>Pick three options for me</button>
-        <button onClick={() => setShowRandomMovies(false)}>Browse All</button>
+      <button onClick={() => setShowRandomMovies(true)}>
+        Pick three options for me
+      </button>
+      <button onClick={() => setShowRandomMovies(false)}>Browse All</button>
       {showRandomMovies && (
         <div>
           <h2>Today's recommendations for you</h2>
