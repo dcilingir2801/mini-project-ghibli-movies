@@ -22,7 +22,7 @@ function MovieDetailsPage() {
       }, [] );
     
     return (
-        <div>
+        <div className="movie-details">
             <h1>{movie.title}</h1>
             <p>{movie.original_title}</p>
             <p>{movie.original_title_romanised}</p>
