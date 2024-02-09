@@ -1,10 +1,12 @@
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <img src="/src/assets/Logo.png" />
-      <h1>Movie Explorer</h1>
+    <Link to="/">
+      <img src="/src/assets/ghibli-logo.png" />
+      </Link>
     </nav>
   );
 }

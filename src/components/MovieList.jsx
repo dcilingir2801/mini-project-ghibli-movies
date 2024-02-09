@@ -66,13 +66,15 @@ function MovieList() {
       {showRandomMovies && (
         <div>
           <h2>Today's recommendations for you</h2>
-          <ul>
+          <ul className={styles["movie-cards"]}>
             {randomMovies.map((movie) => (
-              <li key={movie.id}>
+              <li key={movie.id} className={styles["movie-card"]}>
                 <Link to={`/movies/${movie.id}`}>
                   <img src={movie.image} alt={movie.title} />
-                  <p>{movie.title}</p>
-                  <p>{movie.description}</p>
+                  <div className={styles["movie-details"]}>
+                    <p>{movie.title}</p>
+                    <p>{movie.description}</p>
+                  </div>
                 </Link>
               </li>
             ))}
@@ -81,13 +83,15 @@ function MovieList() {
       )}
       {!showRandomMovies && (
         <div>
-          <ul>
+          <ul className={styles["movie-cards"]}>
             {filteredMovies.map((movie) => (
-              <li key={movie.id}>
+              <li key={movie.id} className={styles["movie-card"]}>
                 <Link to={`/movies/${movie.id}`}>
                   <img src={movie.image} alt={movie.title} />
-                  <p>{movie.title}</p>
-                  <p>{movie.description}</p>
+                  <div className={styles["movie-details"]}>
+                    <h3>{movie.title}</h3>
+                    <p>{movie.description}</p>
+                  </div>
                 </Link>
               </li>
             ))}
