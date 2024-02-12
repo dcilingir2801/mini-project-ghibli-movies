@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./MovieList.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -47,6 +47,10 @@ function MovieList() {
     ]);
   };
 
+  const shortenDescription = (description) => {
+    return description.length > 300 ? description.slice(0, 300) + "..." : description;
+  };
+
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -72,8 +76,8 @@ function MovieList() {
                 <Link to={`/movies/${movie.id}`}>
                   <img src={movie.image} alt={movie.title} />
                   <div className={styles["movie-details"]}>
-                    <p>{movie.title}</p>
-                    <p>{movie.description}</p>
+                    <h3>{movie.title}</h3>
+                    <p>{shortenDescription(movie.description)}</p>
                   </div>
                 </Link>
               </li>
@@ -90,7 +94,7 @@ function MovieList() {
                   <img src={movie.image} alt={movie.title} />
                   <div className={styles["movie-details"]}>
                     <h3>{movie.title}</h3>
-                    <p>{movie.description}</p>
+                    <p>{shortenDescription(movie.description)}</p>
                   </div>
                 </Link>
               </li>

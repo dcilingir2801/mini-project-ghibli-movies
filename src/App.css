@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: white;
   color: black;
 }
 
@@ -30,9 +29,9 @@ div {
 
 .movie-container {
   z-index: 1;
-  padding: 50px;
+  padding-top: 30px;
   border-radius: 20px;
-  width: 1200px;
+  width: 100vw;
 }
 
 

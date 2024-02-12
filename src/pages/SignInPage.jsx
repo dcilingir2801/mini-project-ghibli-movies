@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import useAuth from "/src/hooks/useAuth";
 //import Loading from "../../components/Loading";
 
-export default function SignInPage() {
+export default function SignInPage({ setIsLoggedIn }) {
   const navigate = useNavigate();
   const {
     data: users,
@@ -28,9 +28,9 @@ export default function SignInPage() {
 
   if (error) return <div>error!</div>;
   // if (loading) return <Loading />;
-
+  console.log(users);
   const handleSubmit = async (event) => {
-    
+    event.preventDefault();
     const data = new FormData(event.currentTarget);
     const reqBody = {
       email: data.get("email"),
@@ -40,7 +40,7 @@ export default function SignInPage() {
     const foundUser = users.find((u) => u.email === email);
     console.log(foundUser);
     if (!email || !password || !foundUser) return;
-    
+
     try {
       const passwordMatch = await bcryptjs.compare(
         password,
@@ -48,6 +48,7 @@ export default function SignInPage() {
       );
       if (passwordMatch) {
         localStorage.setItem("isLoggedIn", true);
+        setIsLoggedIn(true);
         console.log("user is authenticated!");
         navigate("/dashboard");
       }
@@ -56,14 +57,17 @@ export default function SignInPage() {
     }
 
     try {
-        const passwordMatch = await bcryptjs.compare(password, foundUser.password);
-        if (passwordMatch) {
-          localStorage.setItem("isLoggedIn", true);
-          navigate("/dashboard");
-        }
-      } catch (err) {
-        console.error(err);
+      const passwordMatch = await bcryptjs.compare(
+        password,
+        foundUser.password
+      );
+      if (passwordMatch) {
+        localStorage.setItem("isLoggedIn", true);
+        navigate("/dashboard");
       }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

@@ -20,10 +20,10 @@ export default function Register() {
   const { data: response, error, loading, handleFetch } = useAuth(options);
   if (error) return <div>error!</div>;
   // if (loading) return <Loading />;
-  //   if (response)
-  //     return (
-  //       <Navigate state={{ user: { ...response, password: null } }} to="/signin" />
-  //     );
+    if (response)
+      return (
+        <Navigate state={{ user: { ...response, password: null } }} to="/signin" />
+  );
 
   const handleSubmit = async (event) => {
     event.preventDefault();
