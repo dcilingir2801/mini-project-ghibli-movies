@@ -6,11 +6,25 @@
   }
 
   .navbar img {
-    width: 170px;
+    width: 120px;
     height: auto;
     padding: 10px;
   }
 
   .navbar h1 {
     padding: 10px;
+  }
+
+  .navbar-links {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 10px;
+  }
+
+  .navbar-links p {
+    margin-right: 20px; 
+    color: white;
   }

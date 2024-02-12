@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className={styles.navbar}>
+    <div className={styles.navbar}>
+    <div className={styles["navbar-image"]}>
     <Link to="/">
       <img src="/src/assets/ghibli-logo.png" />
       </Link>
-    </nav>
+      </div>
+      <div className={styles["navbar-links"]}>
+      <Link to="/"><p>Home</p></Link>
+        <p>About Studio Ghibli</p>
+        <Link to="/signin"><p>Log In</p></Link>
+        <Link to="/signup"><p>Sign Up</p></Link>
+        </div>
+</div>
   );
 }
 
