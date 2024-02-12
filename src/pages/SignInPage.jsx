@@ -2,7 +2,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -14,6 +14,7 @@ import useAuth from "/src/hooks/useAuth";
 //import Loading from "../../components/Loading";
 
 export default function SignInPage() {
+  const navigate = useNavigate();
   const {
     data: users,
     error,
@@ -26,10 +27,10 @@ export default function SignInPage() {
   }, []);
 
   if (error) return <div>error!</div>;
- // if (loading) return <Loading />;
+  // if (loading) return <Loading />;
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    
     const data = new FormData(event.currentTarget);
     const reqBody = {
       email: data.get("email"),
@@ -39,15 +40,30 @@ export default function SignInPage() {
     const foundUser = users.find((u) => u.email === email);
     console.log(foundUser);
     if (!email || !password || !foundUser) return;
+    
     try {
       const passwordMatch = await bcryptjs.compare(
         password,
         foundUser.password
       );
       if (passwordMatch) {
+        localStorage.setItem("isLoggedIn", true);
         console.log("user is authenticated!");
+        navigate("/dashboard");
       }
-    } catch (err) {}
+    } catch (err) {
+      console.error(err);
+    }
+
+    try {
+        const passwordMatch = await bcryptjs.compare(password, foundUser.password);
+        if (passwordMatch) {
+          localStorage.setItem("isLoggedIn", true);
+          navigate("/dashboard");
+        }
+      } catch (err) {
+        console.error(err);
+      }
   };
 
   return (

@@ -15,7 +15,7 @@ import axios from "axios";
 
 // const MOCK_URL = "https://mock-backend-movies.adaptable.app/users/";
 
-export default function SignUpPage() {
+export default function Register() {
   const options = { method: "POST", endPoint: "/users" };
   const { data: response, error, loading, handleFetch } = useAuth(options);
   if (error) return <div>error!</div>;
