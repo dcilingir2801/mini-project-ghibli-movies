@@ -1,7 +1,8 @@
 .movie-list-bar {
   display: flex;
   flex-direction: row-reverse;
-  background-color: rgb(22, 136, 186, 0.6);
+  background-color: rgb(22, 136, 186, 0.40);
+  box-shadow: 1px 1px 2px 2px rgb(22, 136, 186, 0.50);
   width: 90%;
   height: 30px;
   border-radius: 190px;
@@ -26,7 +27,7 @@
   margin-top: 6px;
   display: flex;
   border: 2px solid white;
-  color: white;
+  color: black;
   padding: 0px 20px;
 }
 

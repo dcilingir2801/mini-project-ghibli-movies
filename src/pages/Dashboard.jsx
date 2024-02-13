@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "/src/pages/Dashboard.module.css"
 
 export default function Dashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(() =>
@@ -48,17 +49,32 @@ export default function Dashboard() {
 
 
   return (
-<div>
-    <h1>Welcome back, {user.firstName}</h1>
-    <p>Your Watchlist</p> <br />
-    {user.watchLaterList && user.watchLaterList.map((movieId, index) => (
-      <p key={index}>{movieId}</p>
-    ))}
-    <p>Your Favorites</p> <br />
-    {user.favorites && user.favorites.map((favorite, index) => (
-      <p key={index}>{favorite.movieId}</p>
-    ))}
-    <p>Your Reviews</p>
+<div className={styles["main-container"]}>
+    <h1>Welcome back, {user.firstName}!</h1>
+    <div className={styles["dashboard-base"]}>
+        <div className={styles["dashboard-user-image"]}>
+            <img src="/src/assets/user-icon.png" />
+        </div>
+        <div className={styles["dashboard-user-info"]}>
+            <p>Name: {user.firstName} {user.lastName}</p>
+            <p>E-Mail: {user.email}</p>
+        </div>
+    </div>
+    <div className={styles["dashboard-saved"]}>
+        <p>Your Watchlist</p> <br />
+        {user.watchLaterList && user.watchLaterList.map((movieId, index) => (
+        <p key={index}>{movieId}</p>
+        ))}
+    </div>
+    <div className={styles["dashboard-saved"]}>
+        <p>Your Favorites</p> <br />
+        {user.favorites && user.favorites.map((favorite, index) => (
+        <p key={index}>{favorite.movieId}</p>
+        ))}
+    </div>
+    <div className={styles["dashboard-saved"]}>
+        <p>Your Reviews</p>
+    </div>
   </div>
   );
 }

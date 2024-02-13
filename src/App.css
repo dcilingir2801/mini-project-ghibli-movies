@@ -17,6 +17,7 @@ body {
   background-image: url(/src/assets/howl049.jpeg);
   background-size: 1450px;
   background-repeat: no-repeat;
+  margin-top: -7px;
 }
 
 .homepage img {

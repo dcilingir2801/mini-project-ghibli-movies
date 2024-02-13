@@ -34,7 +34,7 @@ function MovieList() {
 
   const generateRandomMovies = () => {
     const randomIndexes = [];
-    while (randomIndexes.length < 3) {
+    while (randomIndexes.length < 4) {
       const randomIndex = Math.floor(Math.random() * movies.length);
       if (!randomIndexes.includes(randomIndex)) {
         randomIndexes.push(randomIndex);
@@ -44,6 +44,7 @@ function MovieList() {
       movies[randomIndexes[0]],
       movies[randomIndexes[1]],
       movies[randomIndexes[2]],
+      movies[randomIndexes[3]],
     ]);
   };
 
@@ -65,7 +66,7 @@ function MovieList() {
         onChange={handleSearch}
       />
       <button onClick={() => setShowRandomMovies(true)}>
-        Pick three options for me
+        Pick four options for me
       </button>
       <button onClick={() => setShowRandomMovies(false)}>Browse All</button>
       </div>
