@@ -24,6 +24,18 @@ function MovieDetailsPage() {
           .then((response) => setReviews(response.data))
           .catch((error) => console.log(error));
     };
+
+    const saveMovieToWatchLater = () => {
+        axios.put(`https://mock-backend-movies.adaptable.app/users/${userId}`, {
+            watchLaterList: [movieId], // Assuming watchLaterList is an array of movie IDs in your backend user model
+        })
+        .then(response => {
+            console.log("Movie saved to watch later list successfully:", response.data);
+        })
+        .catch(error => {
+            console.error("Error saving movie to watch later list:", error);
+        });
+    };
     
     useEffect(() => {
         getMovie();
@@ -36,6 +48,7 @@ function MovieDetailsPage() {
                 <div className={styles["movie-details-header"]}>
                     <h1>{movie.title}</h1>
                     <p className={styles["original-title"]}>{movie.original_title}</p>
+                    <button onClick={saveMovieToWatchLater}>Save to Watch Later</button>
                     <img src={movie.movie_banner} alt="Movie Banner"/>
                 </div>
                 <div className={styles["movie-details-content"]}>

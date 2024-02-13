@@ -49,6 +49,7 @@ export default function SignInPage({ setIsLoggedIn }) {
       if (passwordMatch) {
         localStorage.setItem("isLoggedIn", true);
         setIsLoggedIn(true);
+        localStorage.setItem("userId", foundUser.id);
         console.log("user is authenticated!");
         navigate("/dashboard");
       }
