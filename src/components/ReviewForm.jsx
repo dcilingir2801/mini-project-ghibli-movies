@@ -3,7 +3,7 @@ import axios from "axios";
 
 const MOCK_URL = "https://mock-backend-movies.adaptable.app/reviews/";
 
-function ReviewForm({ movieId }) { 
+function ReviewForm({ movieId, updateReviews }) {
     const [title, setTitle] = useState("");
     const [review, setReview] = useState("");
 
@@ -12,12 +12,13 @@ function ReviewForm({ movieId }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const requestBody = { movieId, title, review }; 
+        const requestBody = { movieId, title, review };
 
         axios
         .post(`${MOCK_URL}`, requestBody)
         .then((resp) => {
             console.log(resp);
+            updateReviews();
         })
         .catch((error) => console.log(error));
 

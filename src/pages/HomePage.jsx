@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieList from '../components/MovieList';
+import { Link } from "react-router-dom"
 
 function HomePage() {
 
@@ -19,7 +20,7 @@ function HomePage() {
                 films right here. From the heartwarming adventures of "My Neighbor Totoro"
                 to the spellbinding journey of "Spirited Away" there's a Ghibli masterpiece for everyone.  <br /> <br />
                 So, have you explored the wonder of Ghibli yet? If not, what are you waiting for?<br /><br /><br />
-                <button>Learn more about Studio Ghibli</button><br />
+                <Link to="/about"><button>Learn more about Studio Ghibli</button></Link><br />
                 <button onClick={scrollToMovies}>Explore all movies &#9660;</button></p>
             </div>
             <div id='movie-container' className='movie-container'>

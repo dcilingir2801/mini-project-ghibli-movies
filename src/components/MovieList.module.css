@@ -6,19 +6,28 @@
   height: 30px;
   border-radius: 190px;
   justify-content: space-around;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   margin-bottom: 20px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .movie-list-bar button {
   background: transparent;
   border: 2px solid white;
   color: white;
-  padding: 10px 7px;
+  padding: 15px 80px;
   background-color: rgb(22, 136, 186, 0.4);
   font-size: 13px;
+}
+
+.movie-list-bar input {
+  height: 30px;
+  margin-top: 6px;
+  display: flex;
+  border: 2px solid white;
+  color: white;
+  padding: 0px 20px;
 }
 
 .movie-list {
@@ -36,7 +45,7 @@
 }
 
 .movie-card {
-  border: 5px white solid;
+  border: 3px white solid;
   background: rgb(250, 250, 250, 0.5);
   border-radius: 5px;
   flex: 0 0 calc(22% - 20px); 

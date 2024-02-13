@@ -11,14 +11,14 @@ import Container from "@mui/material/Container";
 import bcryptjs from "bcryptjs-react";
 import { useEffect } from "react";
 import useAuth from "/src/hooks/useAuth";
-//import Loading from "../../components/Loading";
+import Loading from "/src/components/Loading";
 
 export default function SignInPage({ setIsLoggedIn }) {
   const navigate = useNavigate();
   const {
     data: users,
     error,
-    //loading,
+    loading,
     handleFetch,
   } = useAuth({ endPoint: "/users" });
 
@@ -27,7 +27,7 @@ export default function SignInPage({ setIsLoggedIn }) {
   }, []);
 
   if (error) return <div>error!</div>;
-  // if (loading) return <Loading />;
+  if (loading) return <Loading />;
   console.log(users);
   const handleSubmit = async (event) => {
     event.preventDefault();

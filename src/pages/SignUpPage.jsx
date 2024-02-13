@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import bcryptjs from "bcryptjs-react";
 import useAuth from "/src/hooks/useAuth.js";
-// import Loading from "../../components/Loading";
+import Loading from "/src/components/Loading";
 import axios from "axios";
 
 // const MOCK_URL = "https://mock-backend-movies.adaptable.app/users/";
@@ -19,7 +19,7 @@ export default function Register() {
   const options = { method: "POST", endPoint: "/users" };
   const { data: response, error, loading, handleFetch } = useAuth(options);
   if (error) return <div>error!</div>;
-  // if (loading) return <Loading />;
+  if (loading) return <Loading />;
     if (response)
       return (
         <Navigate state={{ user: { ...response, password: null } }} to="/signin" />
@@ -33,6 +33,7 @@ export default function Register() {
       password: data.get("password"),
       firstName: data.get("firstName"),
       lastName: data.get("lastName"),
+      watchLaterList: [] 
     };
     const { email, password, firstName, lastName } = reqBody;
 
