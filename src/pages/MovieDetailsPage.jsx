@@ -36,23 +36,24 @@ function MovieDetailsPage() {
                 <div className={styles["movie-details-header"]}>
                     <h1>{movie.title}</h1>
                     <p className={styles["original-title"]}>{movie.original_title}</p>
+                    <img src={movie.movie_banner} alt="Movie Banner"/>
                 </div>
                 <div className={styles["movie-details-content"]}>
                     <div className={styles["movie-poster"]}>
                         <img src={movie.image} alt="Movie Poster"/>
-                        <img src={movie.movie_banner} alt="Movie Banner"/>
                     </div>
                     <div className={styles["movie-description"]}>
-                        <p>{movie.description}</p>
+                        <br /> <br />
+                        <p>{movie.description}</p> <br /> <br />
                         <p><strong>Director:</strong> {movie.director}</p>
-                        <p><strong>Producer:</strong> {movie.producer}</p>
-                        <p><strong>Release Date:</strong> {movie.release_date}</p>
-                        <p><strong>Running Time:</strong> {movie.running_time} Minutes</p>
+                        <p><strong>Producer:</strong> {movie.producer}</p><br />
+                        <p><strong>Release Date:</strong> {movie.release_date}</p><br />
+                        <p><strong>Running Time:</strong> {movie.running_time} Minutes</p><br />
                         <p><strong>Rating:</strong> {movie.rt_score}/100</p>
                     </div>
                 </div>
-                <ReviewForm movieId={movieId} />
                 <div className={styles["reviews-section"]}>
+                <ReviewForm movieId={movieId} />
                     <h2>Reviews</h2>
                     {reviews.map((review) => (
                         <div key={review.id} className={styles["review"]}>
@@ -63,7 +64,7 @@ function MovieDetailsPage() {
                 </div>
             </div>
             <Link to="/" className={styles["back-button"]}>
-                Back
+                <button>Back</button>
             </Link>
         </div>
     )

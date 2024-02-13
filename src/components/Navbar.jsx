@@ -7,7 +7,7 @@ function Navbar({ isLoggedIn }) {
       <div className={styles.navbar}>
         <div className={styles["navbar-image"]}>
           <Link to="/">
-            <img src="/src/assets/ghibli-logo.png" />
+            <img src="/src/assets/Studio_Ghibli-logo-78E2716B50-seeklogo.com.png" />
           </Link>
         </div>
         <div className={styles["navbar-links"]}>
@@ -31,7 +31,7 @@ function Navbar({ isLoggedIn }) {
     <div className={styles.navbar}>
       <div className={styles["navbar-image"]}>
         <Link to="/">
-          <img src="/src/assets/ghibli-logo.png" />
+          <img src="/src/assets/Studio_Ghibli-logo-78E2716B50-seeklogo.com.png" />
         </Link>
       </div>
       <div className={styles["navbar-links"]}>

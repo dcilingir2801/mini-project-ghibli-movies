@@ -27,7 +27,7 @@ function ReviewForm({ movieId }) {
 
     return (
     <div className="reviewForm">
-    <h4>Leave a review</h4>
+    <h2>Leave a review</h2>
     <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input

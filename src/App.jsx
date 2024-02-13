@@ -17,7 +17,6 @@ function App() {
   );
   return (
     <>
-      <img src="/src/assets/n2t2137ysxq71.jpeg"></img>
       <Navbar isLoggedIn={isLoggedIn} />
       <Routes>
         <Route path="/" element={<HomePage />} />
