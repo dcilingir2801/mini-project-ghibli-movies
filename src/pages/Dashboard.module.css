@@ -58,7 +58,7 @@ h1 {
     justify-content: center;
     flex-direction: row;
     flex: 0 0 calc(22% - 20px); 
-    max-width: calc(22% - 20px)
+    max-width: calc(22% - 20px);
 }
 
 .dashboard-saved-reviews {
