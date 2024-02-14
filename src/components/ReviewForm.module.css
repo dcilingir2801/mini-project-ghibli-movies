@@ -1,0 +1,36 @@
+.review-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h2 {
+    display: flex;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.review-form input {
+    margin-top: 10px 0px;
+}
+
+.review-form label {
+    margin-top: 10px;
+}
+
+.review-form button {
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: lightgray;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:active {
+    background-color: lightgray;
+    box-shadow: 0 5px #666;
+    color: white;
+    transform: translateY(4px);
+  }

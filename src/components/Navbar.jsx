@@ -21,7 +21,7 @@ function Navbar({ isLoggedIn }) {
             <p>Dashboard</p>
           </Link>
           <Link to="/logout">
-            <button>Logout</button>
+            <p>Logout</p>
           </Link>
         </div>
       </div>

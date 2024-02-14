@@ -1,57 +1,60 @@
 import { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import styles from "./ReviewForm.module.css"
 
 const MOCK_URL = "https://mock-backend-movies.adaptable.app/reviews/";
 
 function ReviewForm({ movieId, updateReviews }) {
-    const [title, setTitle] = useState("");
-    const [review, setReview] = useState("");
+  const [title, setTitle] = useState("");
+  const [review, setReview] = useState("");
+  const [userId, setUserId] = useState(() => localStorage.getItem("userId"));
 
-    const handleTitleInput = e => setTitle(e.target.value);
-    const handleReviewInput = e => setReview(e.target.value);
+  console.log(userId);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const requestBody = { movieId, title, review };
+  const handleTitleInput = (e) => setTitle(e.target.value);
+  const handleReviewInput = (e) => setReview(e.target.value);
 
-        axios
-        .post(`${MOCK_URL}`, requestBody)
-        .then((resp) => {
-            console.log(resp);
-            updateReviews();
-        })
-        .catch((error) => console.log(error));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { movieId, title, review, userId: +userId };
 
-        setTitle("");
-        setReview("");
-    };
+    axios
+      .post(`${MOCK_URL}`, requestBody)
+      .then((resp) => {
+        console.log(resp);
+        updateReviews();
+      })
+      .catch((error) => console.log(error));
 
-    return (
-    <div className="reviewForm">
-    <h2>Leave a review</h2>
-    <form onSubmit={handleSubmit}>
+    setTitle("");
+    setReview("");
+  };
+
+  return (
+    <div>
+      <h2>Leave a review</h2>
+      <form onSubmit={handleSubmit} className={styles["review-form"]}>
         <label>Title</label>
         <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={handleTitleInput}
+          type="text"
+          name="title"
+          value={title}
+          onChange={handleTitleInput}
         />
 
         <label>Review</label>
         <input
-        type="text"
-        name="review"
-        value={review}
-        onChange={handleReviewInput}
+          type="text"
+          name="review"
+          value={review}
+          onChange={handleReviewInput}
         />
 
         <button type="submit">Submit</button>
-    </form>
-
+      </form>
     </div>
-    )
-
+  );
 }
 
 export default ReviewForm;
