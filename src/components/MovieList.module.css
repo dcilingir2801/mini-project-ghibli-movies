@@ -32,7 +32,7 @@ button:hover {
 
 button:active {
   background-color: lightgray;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 2px #666;
   color: white;
   transform: translateY(4px);
 }
