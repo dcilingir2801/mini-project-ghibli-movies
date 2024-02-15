@@ -24,13 +24,13 @@
   border-radius: 3px;
 }
 
-button:hover {
+.movie-list-bar button:hover {
   background-color: lightgray;
   color: white;
   cursor: pointer;
 }
 
-button:active {
+.movie-list-bar button:active {
   background-color: lightgray;
   box-shadow: 0 2px #666;
   color: white;
