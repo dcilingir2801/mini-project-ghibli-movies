@@ -72,48 +72,45 @@ Development Dependencies: <br>
 
 ## Project Structure
 
-├── node_modules
-│   ├── controller
-│   │   ├── **/*.css
-│   ├── views
-├── public
-│   ├── vite.svg
-├── src
-│   ├── assets
-│   ├── components
-│   │   ├── Loading.jsx
-│   │   ├── Loading.module.css
-│   │   ├── MovieList.jsx
-│   │   ├── MovieList.module.css
-│   │   ├── Navbar.jsx
-│   │   ├── Navbar.module.css
-│   │   ├── ReviewForm.jsx
-│   │   ├── ReviewForm.module.css
-│   ├── hooks
-│   │   ├── useAuth.js
-│   ├── pages
-│   │   ├── About.jsx
-│   │   ├── Dashboard.jsx
-│   │   ├── Dashboard.module.css
-│   │   ├── HomePage.jsx
-│   │   ├── MovieDetailsPage.jsx
-│   │   ├── MovieDetailsPage.module.css
-│   │   ├── NotFoundPage.jsx
-│   │   ├── SignInPage.jsx
-│   │   ├── SignOutPage.jsx
-│   │   ├── SignUpPage.jsx
-│   ├── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   ├── main.jsx
-├── .env
-├── eslintrc.cjs
-└── .gitignore
-└── index.html
-├── package.json
-├── package-lock.json
-└── README.md
-└── vite.config.js
+- node_modules
+- public
+  - vite.svg
+- src
+  - assets
+  - components
+    - Loading.jsx
+    - Loading.module.css
+    - MovieList.jsx
+    - MovieList.module.css
+    - Navbar.jsx
+    - Navbar.module.css
+    - ReviewForm.jsx
+    - ReviewForm.module.css
+  - hooks
+    - useAuth.js
+  - pages
+    - About.jsx
+    - Dashboard.jsx
+    - Dashboard.module.css
+    - HomePage.jsx
+    - MovieDetailsPage.jsx
+    - MovieDetailsPage.module.css
+    - NotFoundPage.jsx
+    - SignInPage.jsx
+    - SignOutPage.jsx
+    - SignUpPage.jsx
+  - App.css
+  - App.jsx
+  - index.css
+  - main.jsx
+- .env
+- eslintrc.cjs
+- .gitignore
+- index.html
+- package.json
+- package-lock.json
+- README.md
+- vite.config.js
 
 
 ## Extra Links
