@@ -88,3 +88,11 @@ h3,
   color: black;
   padding-bottom: 10px;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+

@@ -116,7 +116,7 @@ Development Dependencies: <br>
 ## Extra Links
 
 <h3>Deploy</h3>
-<a href="https://dcilingir2801.github.io/one-piece-mini-game/">Play the Game!</a>
+*not deployed yet*
 
 ## Credits
 

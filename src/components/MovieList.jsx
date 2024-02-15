@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./MovieList.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FaArrowAltCircleUp } from "react-icons/fa";
 
 const API_URL = "https://ghibliapi.vercel.app/films/";
 
@@ -56,23 +57,29 @@ function MovieList() {
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className={styles["movie-list"]}>
-    <div className={styles["movie-list-bar"]}>
-      <input
-        type="text"
-        placeholder="Search movies"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <button onClick={() => setShowRandomMovies(true)}>
-        Pick four options for me
-      </button>
-      <button onClick={() => setShowRandomMovies(false)}>Browse All</button>
+      <div className={styles["movie-list-bar"]}>
+        <input
+          type="text"
+          placeholder="Search movies"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        <button onClick={() => setShowRandomMovies(true)}>
+          Pick four options for me
+        </button>
+        <button onClick={() => setShowRandomMovies(false)}>Browse All</button>
       </div>
       {showRandomMovies && (
         <div>
-          {/* {<h2>Today's recommendations for you</h2>} */}
           <ul className={styles["movie-cards"]}>
             {randomMovies.map((movie) => (
               <li key={movie.id} className={styles["movie-card"]}>
@@ -105,6 +112,9 @@ function MovieList() {
           </ul>
         </div>
       )}
+      <div className={styles["scroll-to-top"]} onClick={scrollToTop}>
+        <FaArrowAltCircleUp size={32} />
+      </div>
     </div>
   );
 }
