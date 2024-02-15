@@ -79,6 +79,7 @@ function MovieDetailsPage() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getMovie();
     getReviews();
   }, [setReviews]);
