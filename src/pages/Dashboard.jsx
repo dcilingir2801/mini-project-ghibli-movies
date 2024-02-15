@@ -62,7 +62,7 @@ export default function Dashboard() {
       <h1>Welcome back, {user.firstName}!</h1>
       <div className={styles["dashboard-base"]}>
         <div className={styles["dashboard-user-image"]}>
-          <img src="/src/assets/user-icon.png" alt="User Icon" />
+          <img src="../assets/user-icon.png" alt="User Icon" />
         </div>
         <div className={styles["dashboard-user-info"]}>
           <p>

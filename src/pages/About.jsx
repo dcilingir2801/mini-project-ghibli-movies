@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function About() {
     return (
         <div>
-            <img src="/src/assets/About Banner.png" />
+            <img src="../assets/About Banner.png" />
                     <div className="about-page">
             <h1>About Studio Ghibli</h1>
             <div className="about-description">
