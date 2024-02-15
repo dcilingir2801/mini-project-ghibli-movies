@@ -115,6 +115,9 @@ Development Dependencies: <br>
 
 ## Extra Links
 
+<h3>Presentation Slides</h3>
+<a href="https://drive.google.com/file/d/18xDpDMNPLUKlOnZLz_UDSbGFGTFf6ATJ/view?usp=sharing">Click here</a>
+
 <h3>Deploy</h3>
 *not deployed yet*
 
