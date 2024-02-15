@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Logout from "./pages/SignOutPage";
 import About from "./pages/About";
 import Loading from "./components/Loading";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -44,6 +45,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
+      <Footer />
     </>
   );
 }
