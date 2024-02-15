@@ -2,9 +2,9 @@
 
 ![Game Logo](src/assets/chihiro015.jpeg)
 
-<summary>
+
 This project is a React-based web application that serves as a movie database for Studio Ghibli films. It utilizes data fetched from the Studio Ghibli API to display information about each movie, allows users to leave reviews, and offers features such as user authentication and favorites management.
-</summary>
+
 
 ## Main Functionalities (MVP)
 
