@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const aboutBanner = "/src/assets/About Banner.png"
+const aboutBanner = "../assets/About Banner.png"
 
 function About() {
     return (

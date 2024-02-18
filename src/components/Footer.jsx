@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 
-const logoFooter = "src/assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
+const logoFooter = "../assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
 
 function Footer() {
     return (

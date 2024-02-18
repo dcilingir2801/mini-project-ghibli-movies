@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-const logo = "src/assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
+const logo = "../assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
 
 function Navbar({ isLoggedIn }) {
   if (isLoggedIn) {
