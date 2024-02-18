@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+const aboutBanner = "/src/assets/About Banner.png"
+
 function About() {
     return (
         <div>
-            <img src="/src/assets/About Banner.png" />
+            <img src={aboutBanner} />
                     <div className="about-page">
             <h1>About Studio Ghibli</h1>
             <div className="about-description">

@@ -1,13 +1,15 @@
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
+const logo = "src/assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
+
 function Navbar({ isLoggedIn }) {
   if (isLoggedIn) {
     return (
       <div className={styles.navbar}>
         <div className={styles["navbar-image"]}>
           <Link to="/">
-            <img src="/src/assets/Studio_Ghibli-logo-78E2716B50-seeklogo.com.png" />
+            <img src={logo} />
           </Link>
         </div>
         <div className={styles["navbar-links"]}>
@@ -31,7 +33,7 @@ function Navbar({ isLoggedIn }) {
     <div className={styles.navbar}>
       <div className={styles["navbar-image"]}>
         <Link to="/">
-          <img src="/src/assets/Studio_Ghibli-logo-78E2716B50-seeklogo.com.png" />
+        <img src={logo} />
         </Link>
       </div>
       <div className={styles["navbar-links"]}>
@@ -41,13 +43,13 @@ function Navbar({ isLoggedIn }) {
         <Link to="/about">
           <p>About Studio Ghibli</p>
         </Link>
-
-        <Link to="/signin">
-          <p>Log In</p>
-        </Link>
         <Link to="/signup">
           <p>Sign Up</p>
         </Link>
+        <Link to="/signin">
+          <p>Log In</p>
+        </Link>
+
       </div>
     </div>
   );

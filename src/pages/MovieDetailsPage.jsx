@@ -55,13 +55,6 @@ function MovieDetailsPage() {
           console.log(resp);
           setIsFavorite(false);
         })
-        // axios
-        //   .delete(`${FAVORITES_API_URL}?userId=${userId}&movieId=${movieId}`)
-        //   .then((resp) => {
-        //     console.log(resp);
-        //     console.log("Movie removed");
-        //     setIsFavorite(false);
-        //   })
         .catch((error) => {
           console.error(error);
         });

@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import styles from "/src/pages/Dashboard.module.css";
 import { Link } from "react-router-dom";
 
+const userIcon = "/src/assets/user-icon.png"
+
 export default function Dashboard() {
   const [isLoggedIn, setIsLoggedIn] = useState(() =>
     localStorage.getItem("isLoggedIn")
@@ -62,7 +64,7 @@ export default function Dashboard() {
       <h1>Welcome back, {user.firstName}!</h1>
       <div className={styles["dashboard-base"]}>
         <div className={styles["dashboard-user-image"]}>
-          <img src="/src/assets/user-icon.png" alt="User Icon" />
+          <img src={userIcon} alt="User Icon" />
         </div>
         <div className={styles["dashboard-user-info"]}>
           <p>

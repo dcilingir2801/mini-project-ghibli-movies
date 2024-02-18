@@ -1,5 +1,7 @@
 import styles from "./Footer.module.css";
 
+const logoFooter = "src/assets/Studio-Ghibli-logo-78E2716B50-seeklogo.com.png"
+
 function Footer() {
     return (
         <div className={styles["footer"]}>
@@ -8,7 +10,7 @@ function Footer() {
                 <a href="https://www.linkedin.com/in/denizcilingir/">Linkedin Profile</a>
             </div>
             <div className={styles["footer-img"]}>
-                <img src="/src/assets/Studio_Ghibli-logo-78E2716B50-seeklogo.com.png"/>
+                <img src={logoFooter}/>
             </div>
         </div>
     )
